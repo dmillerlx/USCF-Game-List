@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "lqcB4r6mm6s=",
+  "success": true,
+  "projectFilePath": "C:\\data\\chess\\apps\\USCF Game List\\USCF Game List\\USCF Game List.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\dusti\\.nuget\\packages\\awssdk.core\\4.0.3.7\\awssdk.core.4.0.3.7.nupkg.sha512",
+    "C:\\Users\\dusti\\.nuget\\packages\\awssdk.s3\\4.0.16.3\\awssdk.s3.4.0.16.3.nupkg.sha512",
+    "C:\\Users\\dusti\\.nuget\\packages\\system.io.pipelines\\10.0.1\\system.io.pipelines.10.0.1.nupkg.sha512",
+    "C:\\Users\\dusti\\.nuget\\packages\\system.text.encodings.web\\10.0.1\\system.text.encodings.web.10.0.1.nupkg.sha512",
+    "C:\\Users\\dusti\\.nuget\\packages\\system.text.json\\10.0.1\\system.text.json.10.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

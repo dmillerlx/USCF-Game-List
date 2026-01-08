@@ -1,0 +1,25 @@
+C:\data\chess\apps\USCF Game List\USCF Game List\bin\Debug\net9.0-windows\USCF Game List.exe
+C:\data\chess\apps\USCF Game List\USCF Game List\bin\Debug\net9.0-windows\USCF Game List.deps.json
+C:\data\chess\apps\USCF Game List\USCF Game List\bin\Debug\net9.0-windows\USCF Game List.runtimeconfig.json
+C:\data\chess\apps\USCF Game List\USCF Game List\bin\Debug\net9.0-windows\USCF Game List.dll
+C:\data\chess\apps\USCF Game List\USCF Game List\bin\Debug\net9.0-windows\USCF Game List.pdb
+C:\data\chess\apps\USCF Game List\USCF Game List\obj\Debug\net9.0-windows\USCF_Game_List.Form1.resources
+C:\data\chess\apps\USCF Game List\USCF Game List\obj\Debug\net9.0-windows\USCF Game List.csproj.GenerateResource.cache
+C:\data\chess\apps\USCF Game List\USCF Game List\obj\Debug\net9.0-windows\USCF Game List.GeneratedMSBuildEditorConfig.editorconfig
+C:\data\chess\apps\USCF Game List\USCF Game List\obj\Debug\net9.0-windows\USCF Game List.AssemblyInfoInputs.cache
+C:\data\chess\apps\USCF Game List\USCF Game List\obj\Debug\net9.0-windows\USCF Game List.AssemblyInfo.cs
+C:\data\chess\apps\USCF Game List\USCF Game List\obj\Debug\net9.0-windows\USCF Game List.csproj.CoreCompileInputs.cache
+C:\data\chess\apps\USCF Game List\USCF Game List\obj\Debug\net9.0-windows\USCF Game List.dll
+C:\data\chess\apps\USCF Game List\USCF Game List\obj\Debug\net9.0-windows\refint\USCF Game List.dll
+C:\data\chess\apps\USCF Game List\USCF Game List\obj\Debug\net9.0-windows\USCF Game List.pdb
+C:\data\chess\apps\USCF Game List\USCF Game List\obj\Debug\net9.0-windows\USCF Game List.genruntimeconfig.cache
+C:\data\chess\apps\USCF Game List\USCF Game List\obj\Debug\net9.0-windows\ref\USCF Game List.dll
+C:\data\chess\apps\USCF Game List\USCF Game List\bin\Debug\net9.0-windows\AWSSDK.Core.dll
+C:\data\chess\apps\USCF Game List\USCF Game List\bin\Debug\net9.0-windows\AWSSDK.S3.dll
+C:\data\chess\apps\USCF Game List\USCF Game List\bin\Debug\net9.0-windows\System.IO.Pipelines.dll
+C:\data\chess\apps\USCF Game List\USCF Game List\bin\Debug\net9.0-windows\System.Text.Encodings.Web.dll
+C:\data\chess\apps\USCF Game List\USCF Game List\bin\Debug\net9.0-windows\System.Text.Json.dll
+C:\data\chess\apps\USCF Game List\USCF Game List\bin\Debug\net9.0-windows\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
+C:\data\chess\apps\USCF Game List\USCF Game List\bin\Debug\net9.0-windows\runtimes\win\lib\net9.0\System.Text.Encodings.Web.dll
+C:\data\chess\apps\USCF Game List\USCF Game List\obj\Debug\net9.0-windows\USCF Game List.csproj.AssemblyReference.cache
+C:\data\chess\apps\USCF Game List\USCF Game List\obj\Debug\net9.0-windows\USCF Gam.02C099F3.Up2Date
