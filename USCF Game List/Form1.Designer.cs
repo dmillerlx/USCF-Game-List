@@ -35,6 +35,7 @@ namespace USCF_Game_List
             this.btnUpload = new System.Windows.Forms.Button();
             this.btnClearCache = new System.Windows.Forms.Button();
             this.btnYearlyStats = new System.Windows.Forms.Button();
+            this.btnEditUscfIds = new System.Windows.Forms.Button();
             this.btnRemoveRandom = new System.Windows.Forms.Button();
             this.btnRemoveRecent = new System.Windows.Forms.Button();
             this.lblStats = new System.Windows.Forms.Label();
@@ -121,9 +122,19 @@ namespace USCF_Game_List
             this.btnYearlyStats.UseVisualStyleBackColor = true;
             this.btnYearlyStats.Click += new System.EventHandler(this.btnYearlyStats_Click);
             //
+            // btnEditUscfIds
+            //
+            this.btnEditUscfIds.Location = new System.Drawing.Point(510, 11);
+            this.btnEditUscfIds.Name = "btnEditUscfIds";
+            this.btnEditUscfIds.Size = new System.Drawing.Size(120, 25);
+            this.btnEditUscfIds.TabIndex = 9;
+            this.btnEditUscfIds.Text = "Edit USCF IDs";
+            this.btnEditUscfIds.UseVisualStyleBackColor = true;
+            this.btnEditUscfIds.Click += new System.EventHandler(this.btnEditUscfIds_Click);
+            //
             // btnRemoveRandom
             //
-            this.btnRemoveRandom.Location = new System.Drawing.Point(510, 11);
+            this.btnRemoveRandom.Location = new System.Drawing.Point(640, 11);
             this.btnRemoveRandom.Name = "btnRemoveRandom";
             this.btnRemoveRandom.Size = new System.Drawing.Size(120, 25);
             this.btnRemoveRandom.TabIndex = 6;
@@ -134,7 +145,7 @@ namespace USCF_Game_List
             //
             // btnRemoveRecent
             //
-            this.btnRemoveRecent.Location = new System.Drawing.Point(640, 11);
+            this.btnRemoveRecent.Location = new System.Drawing.Point(770, 11);
             this.btnRemoveRecent.Name = "btnRemoveRecent";
             this.btnRemoveRecent.Size = new System.Drawing.Size(120, 25);
             this.btnRemoveRecent.TabIndex = 7;
@@ -212,6 +223,7 @@ namespace USCF_Game_List
             this.panelTop.Controls.Add(this.btnUpload);
             this.panelTop.Controls.Add(this.btnClearCache);
             this.panelTop.Controls.Add(this.btnYearlyStats);
+            this.panelTop.Controls.Add(this.btnEditUscfIds);
             this.panelTop.Controls.Add(this.btnRemoveRandom);
             this.panelTop.Controls.Add(this.btnRemoveRecent);
             this.panelTop.Location = new System.Drawing.Point(0, 0);
@@ -265,6 +277,7 @@ namespace USCF_Game_List
         private System.Windows.Forms.Button btnUpload;
         private System.Windows.Forms.Button btnClearCache;
         private System.Windows.Forms.Button btnYearlyStats;
+        private System.Windows.Forms.Button btnEditUscfIds;
         private System.Windows.Forms.Button btnRemoveRandom;
         private System.Windows.Forms.Button btnRemoveRecent;
         private System.Windows.Forms.Label lblStats;

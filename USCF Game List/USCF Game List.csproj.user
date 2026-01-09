@@ -7,6 +7,9 @@
     <Compile Update="Dialogs\SettingsDialog.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Dialogs\UscfIdsEditorDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Dialogs\YearlyStatsDialog.cs">
       <SubType>Form</SubType>
     </Compile>

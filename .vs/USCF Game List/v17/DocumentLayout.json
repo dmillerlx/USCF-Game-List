@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\data\\chess\\apps\\USCF Game List\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4CDA7C58-8D92-4685-A258-4C0735E5E105}|USCF Game List\\USCF Game List.csproj|c:\\data\\chess\\apps\\uscf game list\\uscf game list\\services\\uscfapiclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4CDA7C58-8D92-4685-A258-4C0735E5E105}|USCF Game List\\USCF Game List.csproj|solutionrelative:uscf game list\\services\\uscfapiclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{4CDA7C58-8D92-4685-A258-4C0735E5E105}|USCF Game List\\USCF Game List.csproj|c:\\data\\chess\\apps\\uscf game list\\uscf game list\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4CDA7C58-8D92-4685-A258-4C0735E5E105}|USCF Game List\\USCF Game List.csproj|solutionrelative:uscf game list\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4CDA7C58-8D92-4685-A258-4C0735E5E105}|USCF Game List\\USCF Game List.csproj|c:\\data\\chess\\apps\\uscf game list\\uscf game list\\services\\uscfapiclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4CDA7C58-8D92-4685-A258-4C0735E5E105}|USCF Game List\\USCF Game List.csproj|solutionrelative:uscf game list\\services\\uscfapiclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4CDA7C58-8D92-4685-A258-4C0735E5E105}|USCF Game List\\USCF Game List.csproj|C:\\data\\chess\\apps\\USCF Game List\\uscf game list\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -22,30 +22,30 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "USCFApiClient.cs",
               "DocumentMoniker": "C:\\data\\chess\\apps\\USCF Game List\\USCF Game List\\Services\\USCFApiClient.cs",
               "RelativeDocumentMoniker": "USCF Game List\\Services\\USCFApiClient.cs",
               "ToolTip": "C:\\data\\chess\\apps\\USCF Game List\\USCF Game List\\Services\\USCFApiClient.cs",
               "RelativeToolTip": "USCF Game List\\Services\\USCFApiClient.cs",
-              "ViewState": "AgIAAIMAAAAAAAAAAAArwJYAAABRAAAAAAAAAA==",
+              "ViewState": "AgIAAIMAAAAAAAAAAAArwIoAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-07T05:58:31.213Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Form1.cs",
               "DocumentMoniker": "C:\\data\\chess\\apps\\USCF Game List\\USCF Game List\\Form1.cs",
               "RelativeDocumentMoniker": "USCF Game List\\Form1.cs",
               "ToolTip": "C:\\data\\chess\\apps\\USCF Game List\\USCF Game List\\Form1.cs",
               "RelativeToolTip": "USCF Game List\\Form1.cs",
-              "ViewState": "AgIAAFQAAAAAAAAAAAAcwGAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAHMCAAAAAAAAAADgv4ACAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-06T07:33:46.726Z",
               "EditorCaption": ""

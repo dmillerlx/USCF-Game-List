@@ -334,4 +334,76 @@ public class S3Service
             // File doesn't exist, ignore
         }
     }
+
+    /// <summary>
+    /// Downloads uscf-ids.txt from S3 (from uscf-player-monitor bucket)
+    /// Returns list of USCF IDs (one per line)
+    /// </summary>
+    public async Task<List<string>> DownloadUscfIdsAsync()
+    {
+        var ids = new List<string>();
+
+        try
+        {
+            var request = new GetObjectRequest
+            {
+                BucketName = "uscf-player-monitor",
+                Key = "uscf-ids.txt"
+            };
+
+            using var response = await _s3Client.GetObjectAsync(request);
+            using var reader = new StreamReader(response.ResponseStream);
+
+            string? line;
+            while ((line = await reader.ReadLineAsync()) != null)
+            {
+                var trimmed = line.Trim();
+                if (!string.IsNullOrWhiteSpace(trimmed))
+                {
+                    ids.Add(trimmed);
+                }
+            }
+        }
+        catch (AmazonS3Exception ex) when (ex.StatusCode == System.Net.HttpStatusCode.NotFound)
+        {
+            // File doesn't exist yet, return empty list
+        }
+
+        return ids;
+    }
+
+    /// <summary>
+    /// Uploads uscf-ids.txt to S3 (to uscf-player-monitor bucket)
+    /// One USCF ID per line
+    /// </summary>
+    public async Task UploadUscfIdsAsync(List<string> ids)
+    {
+        var content = string.Join(Environment.NewLine, ids);
+
+        var request = new PutObjectRequest
+        {
+            BucketName = "uscf-player-monitor",
+            Key = "uscf-ids.txt",
+            ContentBody = content,
+            ContentType = "text/plain"
+        };
+
+        await _s3Client.PutObjectAsync(request);
+    }
+
+    /// <summary>
+    /// Adds a USCF ID to the uscf-ids.txt file without duplicates
+    /// Downloads, merges, and uploads back to S3
+    /// </summary>
+    public async Task AddUscfIdAsync(string uscfId)
+    {
+        var ids = await DownloadUscfIdsAsync();
+
+        if (!ids.Contains(uscfId))
+        {
+            ids.Add(uscfId);
+            ids = ids.OrderBy(id => id).ToList();
+            await UploadUscfIdsAsync(ids);
+        }
+    }
 }

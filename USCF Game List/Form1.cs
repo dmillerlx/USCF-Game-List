@@ -17,6 +17,19 @@ public partial class Form1 : Form
     public Form1()
     {
         InitializeComponent();
+        InitializeContextMenu();
+    }
+
+    private void InitializeContextMenu()
+    {
+        // Create context menu for USCF ID column
+        var contextMenu = new ContextMenuStrip();
+        var addToListItem = new ToolStripMenuItem("Add to USCF IDs list");
+        addToListItem.Click += AddToUscfIdsList_Click;
+        contextMenu.Items.Add(addToListItem);
+
+        // Attach to grid's mouse click event
+        dataGridGames.CellMouseClick += DataGridGames_ContextMenuClick;
     }
 
     private async void Form1_Load(object sender, EventArgs e)
@@ -662,6 +675,69 @@ public partial class Form1 : Form
 
         using var dialog = new YearlyStatsDialog(_allGames);
         dialog.ShowDialog();
+    }
+
+    private void btnEditUscfIds_Click(object sender, EventArgs e)
+    {
+        if (_s3Service == null)
+        {
+            MessageBox.Show("S3 not configured. Please configure AWS settings first.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            return;
+        }
+
+        using var dialog = new UscfIdsEditorDialog(_s3Service);
+        dialog.ShowDialog();
+    }
+
+    private void DataGridGames_ContextMenuClick(object? sender, DataGridViewCellMouseEventArgs e)
+    {
+        // Only show context menu on right-click in OpponentId column
+        if (e.Button != MouseButtons.Right || e.RowIndex < 0 || e.ColumnIndex < 0)
+            return;
+
+        var column = dataGridGames.Columns[e.ColumnIndex];
+        if (column.Name != "OpponentId")
+            return;
+
+        var game = dataGridGames.Rows[e.RowIndex].DataBoundItem as GameDisplayModel;
+        if (game == null || string.IsNullOrEmpty(game.OpponentId))
+            return;
+
+        // Create and show context menu
+        var contextMenu = new ContextMenuStrip();
+        var addToListItem = new ToolStripMenuItem($"Add {game.OpponentId} to USCF IDs list");
+        addToListItem.Tag = game.OpponentId;
+        addToListItem.Click += AddToUscfIdsList_Click;
+        contextMenu.Items.Add(addToListItem);
+
+        var cellRect = dataGridGames.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, false);
+        var point = new Point(cellRect.Left + e.X, cellRect.Top + e.Y);
+        contextMenu.Show(dataGridGames, point);
+    }
+
+    private async void AddToUscfIdsList_Click(object? sender, EventArgs e)
+    {
+        if (_s3Service == null)
+        {
+            MessageBox.Show("S3 not configured. Please configure AWS settings first.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            return;
+        }
+
+        if (sender is not ToolStripMenuItem menuItem || menuItem.Tag is not string uscfId)
+            return;
+
+        try
+        {
+            SetStatus($"Adding {uscfId} to USCF IDs list...");
+            await _s3Service.AddUscfIdAsync(uscfId);
+            SetStatus($"Added {uscfId} to USCF IDs list on S3");
+            MessageBox.Show($"Successfully added {uscfId} to USCF IDs list!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+        catch (Exception ex)
+        {
+            SetStatus($"Error adding USCF ID: {ex.Message}");
+            MessageBox.Show($"Failed to add USCF ID: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
     }
 
     private void btnRemoveRandom_Click(object sender, EventArgs e)

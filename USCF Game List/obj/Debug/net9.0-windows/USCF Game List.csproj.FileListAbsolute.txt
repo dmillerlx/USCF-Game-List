@@ -23,3 +23,4 @@ C:\data\chess\apps\USCF Game List\USCF Game List\bin\Debug\net9.0-windows\runtim
 C:\data\chess\apps\USCF Game List\USCF Game List\bin\Debug\net9.0-windows\runtimes\win\lib\net9.0\System.Text.Encodings.Web.dll
 C:\data\chess\apps\USCF Game List\USCF Game List\obj\Debug\net9.0-windows\USCF Game List.csproj.AssemblyReference.cache
 C:\data\chess\apps\USCF Game List\USCF Game List\obj\Debug\net9.0-windows\USCF Gam.02C099F3.Up2Date
+C:\data\chess\apps\USCF Game List\USCF Game List\obj\Debug\net9.0-windows\USCF Game List.sourcelink.json

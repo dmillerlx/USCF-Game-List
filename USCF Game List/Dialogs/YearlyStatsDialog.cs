@@ -37,6 +37,7 @@ public partial class YearlyStatsDialog : Form
 
         // Add columns
         gridStats.Columns.Add(new DataGridViewTextBoxColumn { Name = "Year", HeaderText = "Year", Width = 60 });
+        gridStats.Columns.Add(new DataGridViewTextBoxColumn { Name = "Tournaments", HeaderText = "Tourneys", Width = 70 });
         gridStats.Columns.Add(new DataGridViewTextBoxColumn { Name = "Games", HeaderText = "Games", Width = 60 });
         gridStats.Columns.Add(new DataGridViewTextBoxColumn { Name = "Wins", HeaderText = "W", Width = 50 });
         gridStats.Columns.Add(new DataGridViewTextBoxColumn { Name = "Losses", HeaderText = "L", Width = 50 });
@@ -81,6 +82,7 @@ public partial class YearlyStatsDialog : Form
             .Select(yearGroup => new
             {
                 Year = yearGroup.Key,
+                Tournaments = yearGroup.Select(g => g.EventId).Distinct().Count(),
                 Games = yearGroup.Count(),
                 Wins = yearGroup.Count(g => g.Result == "W"),
                 Losses = yearGroup.Count(g => g.Result == "L"),
@@ -103,6 +105,7 @@ public partial class YearlyStatsDialog : Form
 
             gridStats.Rows.Add(
                 stat.Year,
+                stat.Tournaments,
                 stat.Games,
                 stat.Wins,
                 stat.Losses,
@@ -117,6 +120,7 @@ public partial class YearlyStatsDialog : Form
         }
 
         // Calculate totals
+        var totalTournaments = yearlyStats.Sum(s => s.Tournaments);
         var totalGames = yearlyStats.Sum(s => s.Games);
         var totalWins = yearlyStats.Sum(s => s.Wins);
         var totalLosses = yearlyStats.Sum(s => s.Losses);
@@ -130,7 +134,7 @@ public partial class YearlyStatsDialog : Form
         var totalWhiteWinPct = totalWhiteGames > 0 ? (totalWhiteWins * 100.0 / totalWhiteGames).ToString("F1") : "0";
         var totalBlackWinPct = totalBlackGames > 0 ? (totalBlackWins * 100.0 / totalBlackGames).ToString("F1") : "0";
 
-        lblTotal.Text = $"Total: {totalGames} games | {totalWins}-{totalLosses}-{totalDraws} | Win: {totalWinPct}% | " +
+        lblTotal.Text = $"Total: {totalTournaments} tournaments | {totalGames} games | {totalWins}-{totalLosses}-{totalDraws} | Win: {totalWinPct}% | " +
                        $"White: {totalWhiteGames} ({totalWhiteWinPct}%) | Black: {totalBlackGames} ({totalBlackWinPct}%)";
     }
 }
